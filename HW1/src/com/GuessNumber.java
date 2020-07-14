@@ -1,4 +1,4 @@
-package com.ivaniv;
+package com;
 import java.util.Scanner;
 import java.util.Random;
 
