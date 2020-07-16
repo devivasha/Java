@@ -16,14 +16,14 @@ public class Human {
         this.year = year;
     }
 
-    public Human (String name, String surname, int year, int iq,  Human mother, Human father) {
+    public Human(String name, String surname, int year, int iq, Human mother, Human father) {
         this(name, surname, year);
         this.iq = iq;
         this.mother = mother;
         this.father = father;
     }
 
-        public Human (String name, String surname, int year, int iq,  Human mother, Human father, Pet pet) {
+    public Human(String name, String surname, int year, int iq, Human mother, Human father, Pet pet) {
         this(name, surname, year, iq, mother, father);
         this.pet = pet;
         this.describePet();
@@ -33,7 +33,7 @@ public class Human {
         System.out.println("Привет, " + pet.nickname);
     }
     public void describePet (){
-        System.out.println("У меня есть " + pet.nickname+ ", ему "+pet.age+ " лет, он " + (pet.trickLevel >= 50 ? "очень хитрый"  : "почти не хитрый"));
+        System.out.println("У меня есть " + pet.nickname+ ", ему "+ pet.age+ " лет, он " + (pet.trickLevel >= 50 ? "очень хитрый"  : "почти не хитрый"));
     }
 
     @Override
