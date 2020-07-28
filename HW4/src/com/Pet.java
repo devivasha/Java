@@ -20,6 +20,8 @@ public class Pet {
         this.trickLevel =  trickLevel;
         this.habits = habits;
     }
+
+
     public void eat () {
         System.out.println("Я кушаю!");
     }
