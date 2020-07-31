@@ -2,9 +2,10 @@ package com;
 
 public enum Species {
     DOG,
-    CAT,
     FISH,
-    ;
+    ROBOCAT,
+    DOMESTICCAT,
+    UNKNOWN ;
 
     @Override
     public String toString() {
