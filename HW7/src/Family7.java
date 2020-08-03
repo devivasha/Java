@@ -1,6 +1,3 @@
-import com.Human6;
-import com.Pet6;
-
 import java.util.Arrays;
 import java.util.Objects;
 

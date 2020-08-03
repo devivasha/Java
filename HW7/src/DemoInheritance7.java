@@ -1,5 +1,4 @@
 import com.DayOfWeek;
-import com.Species;
 
 public class DemoInheritance7 {
     public static void main(String[] args) {

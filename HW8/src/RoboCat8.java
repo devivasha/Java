@@ -1,9 +1,10 @@
 import java.util.Arrays;
+import java.util.Set;
 
-public class RoboCat7 extends Pet7 implements Foulable8 {
-    public Species7 species7 = Species7.ROBOCAT;
+public class RoboCat8 extends Pet8 implements Foulable8{
+    public Species8 species8 = Species8.ROBOCAT;
 
-    public RoboCat7(String nickname, int age, int trickLevel, String[] habits) {
+    public RoboCat8(String nickname, int age, int trickLevel, Set<String> habits) {
         super(nickname, age, trickLevel, habits);
     }
 
@@ -18,12 +19,12 @@ public class RoboCat7 extends Pet7 implements Foulable8 {
 
     @Override
     public String toString() {
-        return "RoboCat7{" +
-                "species7=" + species7 +
+        return "RoboCat8{" +
+                "species7=" + species8 +
                 ", nickname='" + nickname + '\'' +
                 ", age=" + age +
                 ", trickLevel=" + trickLevel +
-                ", habits=" + Arrays.toString(habits) +
+                ", habits=" +habits +
                 '}';
     }
 }
