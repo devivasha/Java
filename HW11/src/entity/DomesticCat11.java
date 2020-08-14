@@ -1,13 +1,11 @@
-import entity.Foulable11;
-import entity.Pet11;
-import entity.Species11;
+package entity;
 
 import java.util.Set;
 
-public class DomesticCat8 extends Pet8 implements Foulable8 {
-    public Species8 species8 = Species8.DOMESTICCAT;
+public class DomesticCat11 extends Pet11 implements Foulable11 {
+    public Species11 species11 = Species11.DOMESTICCAT;
 
-    public DomesticCat8(String nickname, int age, int trickLevel, Set<String> habits) {
+    public DomesticCat11(String nickname, int age, int trickLevel, Set<String> habits) {
         super(nickname, age, trickLevel, habits);
     }
 
@@ -24,7 +22,7 @@ public class DomesticCat8 extends Pet8 implements Foulable8 {
     @Override
     public String toString() {
         return "DomesticCat8{" +
-                "species8=" + species8 +
+                "species8=" + species11 +
                 ", nickname='" + nickname + '\'' +
                 ", age=" + age +
                 ", trickLevel=" + trickLevel +

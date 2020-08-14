@@ -1,12 +1,11 @@
-import entity.Pet11;
-import entity.Species11;
+package entity;
 
 import java.util.Set;
 
-public class Fish8 extends Pet8 {
-    public Species8 species8 = Species8.FISH;
+public class Fish9 extends Pet9 {
+    public Species11 species8 = Species11.FISH;
 
-    public Fish8(String nickname, int age, int trickLevel, Set<String> habits) {
+    public Fish9(String nickname, int age, int trickLevel, Set<String> habits) {
         super(nickname, age, trickLevel, habits);
     }
     @Override

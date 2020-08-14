@@ -1,11 +1,8 @@
-import com.DayOfWeek;
-import com.Family6;
-import com.Human6;
+import entity.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 
 public class CollectionsDemo8 {
     public static void main(String[] args) {
@@ -26,7 +23,7 @@ public class CollectionsDemo8 {
         Woman8 woman8 = new Woman8("Elene", "Karleone", 1980,50, new HashMap<String, String>(), dog8);
         Woman8 daughter8 = new Woman8("Katya", "Karleone", 2000,50, new HashMap<String, String>(), dog8);
         Man8 son8 = new Man8("Jeck", "Karleone", 2010,50, new HashMap<String, String>(), dog8);
-        Family8 family8 = new Family8(man9, woman8, new ArrayList<>(), new HashSet<>());
+        Family8 family8 = new Family8(man8, woman8, new ArrayList<>(), new HashSet<>());
         family8.children.add(daughter8);
         family8.children.add(son8);
         family8.children.remove(son8);

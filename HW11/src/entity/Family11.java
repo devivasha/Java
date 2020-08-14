@@ -1,52 +1,51 @@
-import entity.Human11;
+package entity;
 
 import java.util.*;
 
 
-public class Family8 {
-    public Human8 father;
-    public Human8 mother;
+public class Family11 {
+    public Human11 father;
+    public Human11 mother;
     public List<Object> children = new ArrayList<>();
-    public Set<Object> pet8 = new HashSet<>();
+    public Set<Object> pet9 = new HashSet<>();
 
 
-    public Family8(Man8 father, Woman8 mother, List<Object> children, Set<Object> pet8) {
+    public Family11(Human11 father, Human11 mother) {
         this.father = father;
         this.mother = mother;
-        this.children = children;
-        this.pet8 = pet8;
+        this.mother.setFamily(this);
+        this.father.setFamily(this);
     }
 
-    public Human8 getFather() {
+
+    public Human11 getFather() {
         return father;
     }
 
-    public void setFather(Human8 father) {
+    public void setFather(Human11 father) {
         this.father = father;
     }
 
-    public Human8 getMother() {
+    public Human11 getMother() {
         return mother;
     }
 
-    public void setMother(Human8 mother) {
+    public void setMother(Human11 mother) {
         this.mother = mother;
     }
 
 
-    public List<Object> getChildren() { return children; }
-    public void setChildren(List<Object> children) { this.children = children; }
+    public List<Object> getChildren() {
+        return children;
+    }
 
-    public Set<Object> getPet8() { return pet8; }
+    public void setChildren(List<Object> children) {
+        this.children = children;
+    }
 
-    public void setPet8(Set<Object> pet8) { this.pet8 = pet8; }
-
-    public void addChild(List<Object> child) {
-        List<Object> tempArr = new ArrayList<>(children.size() + 1);
-        System.arraycopy(children, 0, tempArr, 0, children.size());
-        tempArr.set(tempArr.size() - 1, child);
-//        child.setFamily(this);
-        children = tempArr;
+    public void addChild(Human11 child) {
+       this.children.add(child);
+       child.setFamily(this);
     }
 
     public void deleteChild(int index){
@@ -63,11 +62,20 @@ public class Family8 {
         }
         children = tempChildren;
     }
-    public void deleteChild(List<Object> child){
-        for (int i = 0; i < children.size(); i++) {
-            if (children.get(i).equals(child)) deleteChild(i);
-        }
+    public void deleteChild(Object child){
+        this.children.remove(child);
     }
+
+    public Set<Object> getPets() {
+        return pet9;
+    }
+
+    public void addPet(Pet11 pet9) {
+        this.pet9.add(pet9);
+        pet9.setFamily(this);
+    }
+
+
 
 
     public int countFamily(){
@@ -77,21 +85,24 @@ public class Family8 {
 
     @Override
     public String toString() {
-        return "Family8{" +
+        return "Family9{" +
                 "father=" + father +
                 ", mother=" + mother +
                 ", children=" + children +
-                ", pet8=" + pet8 +
+                ", pet9=" + pet9 +
                 '}';
     }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Family7)) return false;
-        Family7 family = (Family7) o;
-        return father.equals(family.getFather()) &&
-                mother.equals(family.getMother());
+        if (!(o instanceof Family11)) return false;
+        Family11 family9 = (Family11) o;
+        return Objects.equals(father, family9.father) &&
+                Objects.equals(mother, family9.mother) &&
+                Objects.equals(children, family9.children) &&
+                Objects.equals(pet9, family9.pet9);
     }
 
     @Override
@@ -105,8 +116,7 @@ public class Family8 {
                 "father=" + father +
                 ", mother=" + mother +
                 ", children=" + children +
-                ", pet8=" + pet8 +
+                ", pet9=" + pet9 +
                 '}');
     }
-
 }

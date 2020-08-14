@@ -1,13 +1,11 @@
-import entity.Foulable11;
-import entity.Pet11;
-import entity.Species11;
+package entity;
 
 import java.util.Set;
 
-public class DomesticCat8 extends Pet8 implements Foulable8 {
-    public Species8 species8 = Species8.DOMESTICCAT;
+public class DomesticCat9 extends Pet9 implements Foulable11 {
+    public Species11 species8 = Species11.DOMESTICCAT;
 
-    public DomesticCat8(String nickname, int age, int trickLevel, Set<String> habits) {
+    public DomesticCat9(String nickname, int age, int trickLevel, Set<String> habits) {
         super(nickname, age, trickLevel, habits);
     }
 

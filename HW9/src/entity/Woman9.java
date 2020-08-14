@@ -1,25 +1,28 @@
-import entity.Human11;
-import entity.Pet11;
+package entity;
 
 import java.util.HashMap;
 
-final class Man8 extends Human8 {
-
-    public Man8(String name, String surname, int year, int iq, HashMap<String, String> schedule, Pet8 pet8) {
+public final class Woman9 extends Human9 {
+    public Woman9(String name, String surname, int year, int iq, HashMap<String, String> schedule, Pet11 pet8) {
         super(name, surname, year, iq, schedule, pet8);
     }
+
+    public Woman9(String name, String surname, int year, int iq, Object o) {
+        super(name, surname, year, iq, o);
+    }
+
     @Override
     public void greetPet() {
         super.greetPet();
-        System.out.println("У меня нет времени с тобой гулять");
+        System.out.println("Давай будем играть");
     }
-    public void repairCar(){
-        System.out.println("Я запланировал ремонт автомобиля на суботу");
+    public void makeup(){
+        System.out.println("Что бы накрасить губы нужна помада");
     }
 
     @Override
     public String toString() {
-        return "Man8{" +
+        return "Woman8{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", year=" + year +

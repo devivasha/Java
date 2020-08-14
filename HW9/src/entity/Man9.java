@@ -1,13 +1,17 @@
-import entity.Human11;
-import entity.Pet11;
+package entity;
 
 import java.util.HashMap;
 
-final class Man8 extends Human8 {
+public final class Man9 extends Human9 {
 
-    public Man8(String name, String surname, int year, int iq, HashMap<String, String> schedule, Pet8 pet8) {
-        super(name, surname, year, iq, schedule, pet8);
+    public Man9(String name, String surname, int year, int iq, HashMap<String, String> schedule, Pet11 pet9) {
+        super(name, surname, year, iq, schedule, pet9);
     }
+
+    public Man9(String name, String surname, int year, int iq, Object o) {
+        super(name, surname, year, iq, o);
+    }
+
     @Override
     public void greetPet() {
         super.greetPet();
@@ -19,7 +23,7 @@ final class Man8 extends Human8 {
 
     @Override
     public String toString() {
-        return "Man8{" +
+        return "Man9{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", year=" + year +

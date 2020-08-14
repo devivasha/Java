@@ -1,22 +1,25 @@
-
+package entity;
 
 import java.util.HashMap;
 
-public class Human8 {
+public class Human9 {
     public String name;
     public String surname;
     public int year;
     public int iq;
     public HashMap<String, String> schedule = new HashMap<String, String>();
-    public Family8 family;
-    public Pet8 pet8;
+    public Family9 family;
+    public Pet11 pet8;
 
-    public Pet8 getPet8() { return pet8; }
-    public void setPet8(Pet8 pet8) { this.pet8 = pet8; }
-    public Family8 getFamily() {
+    public Human9(String name, String surname, int year, int iq, Object o) {
+    }
+
+    public Pet11 getPet8() { return pet8; }
+    public void setPet8(Pet11 pet8) { this.pet8 = pet8; }
+    public Family9 getFamily() {
         return family;
     }
-    public void setFamily(Family8 family) {
+    public void setFamily(Family9 family) {
         this.family = family;
     }
 
@@ -48,7 +51,7 @@ public class Human8 {
     public HashMap<String,String> getSchedule() { return schedule; }
 
     public void setSchedule(HashMap<String,String> schedule) { this.schedule = schedule; }
-    public Human8(String name, String surname, int year, int iq, HashMap<String,String> schedule, Pet8 pet8) {
+    public Human9(String name, String surname, int year, int iq, HashMap<String,String> schedule, Pet11 pet8) {
         this.name = name;
         this.surname = surname;
         this.year = year;

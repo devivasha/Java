@@ -15,6 +15,11 @@ DONE  - `children` (список детей) `Family` храните в инте
 DONE  - В семье теперь может быть несколько домашних питомцев - храните их в интерфейсе `Set`.
 ???- Исправьте юнит-тесты.
 
+(?? Family класс методы addChild and deleteChaild, уже не нужны так как у SET MAP LIST свои нативные методы add & remove??
+ ?? юнит-тесты  что тестим FamilyDemo переписать - зачем если у нас уже CollectionDemo?- написать
+ тогда что тестить Интерфейс SET MAP LIST и их методы ??
+)
+
 #### Литература:
 - [Типы коллекций. Интерфейс Collection](https://metanit.com/java/tutorial/5.1.php)
 - [Class ArrayLis](https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html)

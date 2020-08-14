@@ -3,7 +3,7 @@ package com;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Family {
+public class Family  {
     private Human5 father;
     private Human5 mother;
     private Human5[] children = new Human5[0];
@@ -96,4 +96,5 @@ public class Family {
     public int hashCode() {
         return Objects.hash(father, mother);
     }
+
 }
