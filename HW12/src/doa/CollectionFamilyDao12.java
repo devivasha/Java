@@ -1,28 +1,27 @@
 package doa;
-import entity.Family11;
 import entity.Family12;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CollectionFamilyDao11 implements FamilyDoa11 {
-    private final List<Family11> families = new ArrayList<>();
+public class CollectionFamilyDao12 implements FamilyDoa12 {
+    private final List<Family12> families = new ArrayList<>();
 
     @Override
-    public List<Family11> getAllFamilies() {
+    public List<Family12> getAllFamilies() {
     return this.families;
     }
 
     @Override
-    public Family11 getFamilyByIndex(int index) {
+    public Family12 getFamilyByIndex(int index) {
         return this.families.get(index);
 
     }
 
 
     @Override
-    public boolean deleteFamily(Family11 family11) {
-        return this.families.remove(family11);
+    public boolean deleteFamily(Family12 family12) {
+        return this.families.remove(family12);
 
     }
 
@@ -36,7 +35,7 @@ public class CollectionFamilyDao11 implements FamilyDoa11 {
     }
 
     @Override
-    public boolean saveFamily(Family11 familyList) {
+    public boolean saveFamily(Family12 familyList) {
         return false;
     }
     @Override

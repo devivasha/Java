@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public final class Man9 extends Human9 {
 
-    public Man9(String name, String surname, int year, int iq, HashMap<String, String> schedule, Pet11 pet9) {
+    public Man9(String name, String surname, int year, int iq, HashMap<String, String> schedule, Pet12 pet9) {
         super(name, surname, year, iq, schedule, pet9);
     }
 

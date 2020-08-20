@@ -1,6 +1,3 @@
-import entity.Human11;
-import entity.Pet11;
-
 import java.util.HashMap;
 
 final class Woman8 extends Human8 {

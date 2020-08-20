@@ -2,8 +2,8 @@ package entity;
 
 import java.util.Set;
 
-public class Fish11 extends Pet11 {
-    public Species11 species11 = Species11.FISH;
+public class Fish11 extends Pet12 {
+    public Species12 species11 = Species12.FISH;
 
     public Fish11(String nickname, int age, int trickLevel, Set<String> habits) {
         super(nickname, age, trickLevel, habits);

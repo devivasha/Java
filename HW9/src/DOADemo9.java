@@ -10,7 +10,7 @@ public class DOADemo9 {
         CollectionFamilyDao9 collectionFamilyDao9 = new CollectionFamilyDao9();
         FamilyService9 familyService9 = new FamilyService9(collectionFamilyDao9);
         FamilyController9 familyController9 = new FamilyController9(familyService9);
-        Dog11 dog8 = new Dog11("Jeck", 5, 50, new HashSet<>(2));
+        Dog12 dog8 = new Dog12("Jeck", 5, 50, new HashSet<>(2));
         dog8.habits.add("run");
         dog8.habits.add("dance");
         Human9 woman9 = new Woman9("Elene", "Karleone", 1980,50, new HashMap<String, String>(), dog8);

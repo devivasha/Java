@@ -1,6 +1,3 @@
-import entity.Pet11;
-import entity.Species11;
-
 import java.util.Set;
 
 public class Fish8 extends Pet8 {

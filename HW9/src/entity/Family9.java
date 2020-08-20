@@ -74,9 +74,6 @@ public class Family9 {
         pet9.setFamily(this);
     }
 
-
-
-
     public int countFamily(){
         return 2 + children.size();
 
@@ -92,16 +89,9 @@ public class Family9 {
                 '}';
     }
 
-
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Family11)) return false;
-        Family11 family9 = (Family11) o;
-        return Objects.equals(father, family9.father) &&
-                Objects.equals(mother, family9.mother) &&
-                Objects.equals(children, family9.children) &&
-                Objects.equals(pet9, family9.pet9);
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 
     @Override

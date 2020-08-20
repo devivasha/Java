@@ -9,7 +9,7 @@ public final class Man11 extends Human11 {
         super(name, surname, birth, iq, schedule, pet11);
     }
 
-    public Man11(String name, String surname, String birth, int iq, Object o)  throws ParseException  {
+    public Man11(String name, String surname, String birth, int iq, HashMap<String, String> schedule, Object o) throws ParseException {
         super(name, surname, birth, iq, o);
     }
 

@@ -1,20 +1,22 @@
+package entity;
+
 import java.util.Set;
 
-public class Unknown8 extends Pet8 {
-    public Species8 species8 = Species8.UNKNOWN;
+public class Fish12 extends Pet12 {
+    public Species12 species12 = Species12.FISH;
 
-    public Unknown8(String nickname, int age, int trickLevel, Set<String> habits) {
+    public Fish12(String nickname, int age, int trickLevel, Set<String> habits) {
         super(nickname, age, trickLevel, habits);
     }
-
     @Override
     public void respond() {
-        System.out.println("Привет, друг. Я неизвестный - "+ this.nickname +". Покорми меня");
+        System.out.println("Привет Я рыбка - "+ this.nickname +". Я люблю плавать ");
     }
+
     @Override
     public String toString() {
-        return "Unknown7{" +
-                "species7=" + species8 +
+        return "Fish8{" +
+                "species8=" + species12 +
                 ", nickname='" + nickname + '\'' +
                 ", age=" + age +
                 ", trickLevel=" + trickLevel +

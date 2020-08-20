@@ -5,7 +5,7 @@ import entity.Family11;
 import entity.Human11;
 import entity.Pet11;
 import service.FamilyService11;
-import service.FamilyService9;
+import service.FamilyService11;
 
 import java.text.ParseException;
 import java.util.List;
@@ -38,11 +38,11 @@ public class FamilyController11 {
         return this.familyService11.deleteFamilyByIndex(index);
     }
 
-    public void bornChild(Family11 family9, String fatherName, String motherName) throws ParseException {
-        this.familyService11.bornChild(family9, fatherName, motherName);
+    public void bornChild(Family11 family11, String fatherName, String motherName) throws ParseException {
+        this.familyService11.bornChild(family11, fatherName, motherName);
     }
-    public boolean adoptChild(Family11 family9, Human11 human9){
-        return this.familyService11.adoptChild(family9, human9);
+    public boolean adoptChild(Family11 family11, Human11 human11){
+        return this.familyService11.adoptChild(family11, human11);
 
     }
     public void deleteAllChildrenOlderThen(int age){
@@ -57,8 +57,8 @@ public class FamilyController11 {
     public Set<Object> getPets(int index){
         return this.familyService11.getPets(index);
     }
-    public void addPet(int familyIndex, Pet11 pet9){
-        this.familyService11.addPet(familyIndex, pet9);
+    public void addPet(int familyIndex, Pet11 pet11){
+        this.familyService11.addPet(familyIndex, pet11);
     }
     public FamilyDoa11 getFamilyDao() {
         return this.familyService11.getFamilyDao();

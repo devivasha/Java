@@ -1,7 +1,3 @@
-import entity.Foulable11;
-import entity.Pet11;
-import entity.Species11;
-
 import java.util.Set;
 
 public class RoboCat8 extends Pet8 implements Foulable8 {

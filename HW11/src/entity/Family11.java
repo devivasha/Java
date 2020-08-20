@@ -7,7 +7,7 @@ public class Family11 {
     public Human11 father;
     public Human11 mother;
     public List<Object> children = new ArrayList<>();
-    public Set<Object> pet9 = new HashSet<>();
+    public Set<Object> pet11 = new HashSet<>();
 
 
     public Family11(Human11 father, Human11 mother) {
@@ -67,12 +67,12 @@ public class Family11 {
     }
 
     public Set<Object> getPets() {
-        return pet9;
+        return pet11;
     }
 
-    public void addPet(Pet11 pet9) {
-        this.pet9.add(pet9);
-        pet9.setFamily(this);
+    public void addPet(Pet11 pet11) {
+        this.pet11.add(pet11);
+        pet11.setFamily(this);
     }
 
 
@@ -89,7 +89,7 @@ public class Family11 {
                 "father=" + father +
                 ", mother=" + mother +
                 ", children=" + children +
-                ", pet9=" + pet9 +
+                ", pet9=" + pet11 +
                 '}';
     }
 
@@ -98,11 +98,11 @@ public class Family11 {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Family11)) return false;
-        Family11 family9 = (Family11) o;
-        return Objects.equals(father, family9.father) &&
-                Objects.equals(mother, family9.mother) &&
-                Objects.equals(children, family9.children) &&
-                Objects.equals(pet9, family9.pet9);
+        Family11 family11 = (Family11) o;
+        return Objects.equals(father, family11.father) &&
+                Objects.equals(mother, family11.mother) &&
+                Objects.equals(children, family11.children) &&
+                Objects.equals(pet11, family11.pet11);
     }
 
     @Override
@@ -116,7 +116,7 @@ public class Family11 {
                 "father=" + father +
                 ", mother=" + mother +
                 ", children=" + children +
-                ", pet9=" + pet9 +
+                ", pet9=" + pet11 +
                 '}');
     }
 }

@@ -45,31 +45,31 @@ public class FamilyService11 {
         return this.collectionFamilyDao11.deleteFamilyByIndex(index);
     }
 
-    public boolean bornChild(Family11 family9, String fatherName, String motherName) throws ParseException {
-        if (family9.getMother() == null || family9.getFather() == null) {
+    public boolean bornChild(Family11 family11, String fatherName, String motherName) throws ParseException {
+        if (family11.getMother() == null || family11.getFather() == null) {
             return false;
         }
         Random random = new Random();
-        Human11 child;
-        int iq = (family9.getFather().getIq() + family9.getMother().getIq()) / 2;
+        Man11 child;
+        int iq = (family11.getFather().getIq() + family11.getMother().getIq()) / 2;
         if (random.nextInt(2) == 1) {
             String name = fatherName;
             name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
-            child = new Man11(name, family9.getFather().getSurname(), "23/01/1999", iq, null);
+            child = new Man11(name, family11.getFather().getSurname(), "23/01/1999", iq, new HashMap<String, String>(), null);
         } else {
             String name = motherName;
             name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
-            child = new Woman11(name, family9.getFather().getSurname(), "23/01/1999", iq, null);
+            child = new Man11(name, family11.getFather().getSurname(), "23/01/1999", iq, new HashMap<String, String>(), null);
         }
-        family9.addChild(child);
+        family11.addChild(child);
         return true;
     }
 
-    public boolean adoptChild(Family11 family9, Human11 human9) {
+    public boolean adoptChild(Family11 family11, Human11 human11) {
         boolean check = false;
         for (Family11 currFamily : this.collectionFamilyDao11.getAllFamilies()) {
-            if (family9.equals(currFamily)) {
-                currFamily.addChild(human9);
+            if (family11.equals(currFamily)) {
+                currFamily.addChild(human11);
                 check = true;
                 break;
             }
@@ -97,8 +97,8 @@ public class FamilyService11 {
         return this.collectionFamilyDao11.getFamilyByIndex(index).getPets();
     }
 
-    public void addPet(int familyIndex, Pet11 pet9){
-        this.collectionFamilyDao11.getFamilyByIndex(familyIndex).addPet(pet9);
+    public void addPet(int familyIndex, Pet11 pet11){
+        this.collectionFamilyDao11.getFamilyByIndex(familyIndex).addPet(pet11);
     }
     public FamilyDoa11 getFamilyDao() {
         return this.collectionFamilyDao11;

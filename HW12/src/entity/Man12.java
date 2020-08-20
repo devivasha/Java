@@ -1,10 +1,18 @@
+package entity;
+
+import java.text.ParseException;
 import java.util.HashMap;
 
-final class Man8 extends Human8 {
+public final class Man12 extends Human12 {
 
-    public Man8(String name, String surname, int year, int iq, HashMap<String, String> schedule, Pet8 pet8) {
-        super(name, surname, year, iq, schedule, pet8);
+    public Man12(String name, String surname, String birth, int iq, HashMap<String, String> schedule, Pet12 pet12) throws ParseException {
+        super(name, surname, birth, iq, schedule, pet12);
     }
+
+    public Man12(String name, String surname, String birth, int iq)  throws ParseException  {
+        super(name, surname, birth, iq);
+    }
+
     @Override
     public void greetPet() {
         super.greetPet();
@@ -16,14 +24,19 @@ final class Man8 extends Human8 {
 
     @Override
     public String toString() {
-        return "Man8{" +
+        return "Man9{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", year=" + year +
+                ", year=" + birthDate +
                 ", iq=" + iq +
                 ", schedule=" + schedule +
                 ", family=" + family +
-                ", pet8=" + pet8 +
+                ", pet8=" + pet12 +
                 '}';
+    }
+
+    @Override
+    public String describeAge() {
+        return super.describeAge();
     }
 }

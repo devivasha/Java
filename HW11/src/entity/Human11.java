@@ -27,7 +27,7 @@ public class Human11 {
     }
 
     public Pet11 getPet11() { return pet11; }
-    public void setPet11(Pet11 pet8) { this.pet11 = pet8; }
+    public void setPet11(Pet11 pet11) { this.pet11 = pet11; }
     public Family11 getFamily() {
         return family;
     }

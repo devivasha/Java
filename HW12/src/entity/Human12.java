@@ -1,5 +1,4 @@
-import entity.Family12;
-import entity.Pet12;
+package entity;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,17 +9,25 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.HashMap;
 
-public class Human10 {
+public class Human12 {
     public String name;
     public String surname;
     public long birthDate;
     public int iq;
     public HashMap<String, String> schedule = new HashMap<String, String>();
     public Family12 family;
-    public Pet12 pet8;
+    public Pet12 pet12;
 
-    public Pet12 getPet8() { return pet8; }
-    public void setPet8(Pet12 pet8) { this.pet8 = pet8; }
+    public Human12(String name, String surname, String birth, int iq) throws ParseException {
+        this.name = name;
+        this.surname = surname;
+        Date date = new SimpleDateFormat("dd/MM/yyyy").parse(birth);
+        this.birthDate = date.getTime();
+        this.iq = iq;
+    }
+
+    public Pet12 getPet12() { return pet12; }
+    public void setPet12(Pet12 pet8) { this.pet12 = pet8; }
     public Family12 getFamily() {
         return family;
     }
@@ -56,45 +63,32 @@ public class Human10 {
     public HashMap<String,String> getSchedule() { return schedule; }
 
     public void setSchedule(HashMap<String,String> schedule) { this.schedule = schedule; }
-    public Human10(String name, String surname, String birth, int iq, HashMap<String,String> schedule, Pet12 pet8) throws ParseException {
+    public Human12(String name, String surname, String birth, int iq, HashMap<String,String> schedule, Pet12 pet12) throws ParseException {
         this.name = name;
         this.surname = surname;
         Date date = new SimpleDateFormat("dd/MM/yyyy").parse(birth);
         this.birthDate = date.getTime();
         this.iq = iq;
         this.schedule = schedule;
-        this.pet8 = pet8;
-    }
-    public Human10(String name, String surname, String birth, int iq) throws ParseException {
-        this.name = name;
-        this.surname = surname;
-        Date date = new SimpleDateFormat("dd/MM/yyyy").parse(birth);
-        this.birthDate = date.getTime();
-        this.iq = iq;
+        this.pet12 = pet12;
     }
     public void greetPet (){
-        System.out.println("Привет, " + pet8.nickname);
+        System.out.println("Привет, " + pet12.nickname);
     }
     public void describePet (){
-        System.out.println("У меня есть " + pet8.nickname+ ", ему "+ pet8.age+ " лет, он " + (pet8.trickLevel >= 50 ? "очень хитрый"  : "почти не хитрый"));
+        System.out.println("У меня есть " + pet12.nickname+ ", ему "+ pet12.age+ " лет, он " + (pet12.trickLevel >= 50 ? "очень хитрый"  : "почти не хитрый"));
     }
-    public String BirthDateFormat() {
-        Date date = new Date(this.birthDate);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        return simpleDateFormat.format(date);
-    }
-
 
     @Override
     public String toString() {
         return "Human8{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", year=" + this.BirthDateFormat() +
+                ", year=" + birthDate +
                 ", iq=" + iq +
                 ", schedule=" + schedule +
                 ", family=" + family +
-                ", pet8=" + pet8 +
+                ", pet8=" + pet12 +
                 '}';
     }
 
@@ -103,7 +97,7 @@ public class Human10 {
         System.out.println("Human8{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", year=" + this.BirthDateFormat() +
+                ", year=" + birthDate +
                 ", iq=" + iq +
                 ", schedule=" + schedule +
                 '}');
@@ -113,5 +107,24 @@ public class Human10 {
         LocalDate currDate = Instant.ofEpochMilli(new Date().getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
         Period period = Period.between(birthDate, currDate);
         return period.getDays() + "- days " + period.getMonths() + "-month " + period.getYears() + "-years ";
+    }
+
+    public String prettyFormat() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String birthDateToString = simpleDateFormat.format(new Date(this.birthDate));
+        StringBuilder str = new StringBuilder();
+        str.append("{name='")
+                .append(this.name)
+                .append("', surname='")
+                .append(this.surname)
+                .append("', birthDate='")
+                .append(birthDateToString)
+                .append("', iq=")
+                .append(this.iq)
+                .append(", schedule=")
+                .append(this.schedule)
+                .append("}");
+        return str.toString();
+
     }
 }
