@@ -1,19 +1,21 @@
 package console;
 
 import java.text.ParseException;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.function.Consumer;
 import java.util.function.Function;
-import controller.FamilyController12;
-import doa.CollectionFamilyDao12;
+import controller.FamilyController13;
+import doa.CollectionFamilyDao13;
 import entity.*;
-import service.FamilyService12;
+import service.FamilyService13;
 
-public class ConsoleMenu {
-   public static CollectionFamilyDao12 collectionFamilyDao12 = new CollectionFamilyDao12();
-   public static FamilyService12 familyService12 = new FamilyService12(collectionFamilyDao12);
-   public static FamilyController12 familyController12 = new FamilyController12(familyService12);
+public class ConsoleMenu13 {
+    public static CollectionFamilyDao13 collectionFamilyDao12 = new CollectionFamilyDao13();
+    public static  FamilyService13 familyService12 = new FamilyService13(collectionFamilyDao12);
+    public static  FamilyController13 familyController12 = new FamilyController13(familyService12);
+
     public static void start() {
         Scanner scanner = new Scanner(System.in);
         boolean stopProgram = false;
@@ -22,36 +24,39 @@ public class ConsoleMenu {
             String input = scanner.nextLine();
 
             switch (input) {
+
                 case "1":
-                    safeCall(ConsoleMenu::filedDB, scanner);
+                    safeCall(ConsoleMenu13::filedDB, scanner);
+                    System.out.println(familyController12.loadData() ? "Сохранение завершенно" : "Данные не сохранились");
+                    System.out.println(familyController12.uploadFamilies() ? "Загрузка завершенна" : "Сбой в загрузке данных");
                     break;
                 case "2":
-                    safeCall(ConsoleMenu::listFamilies, scanner);
+                    safeCall(ConsoleMenu13::listFamilies, scanner);
                     break;
                 case "3":
-                    safeCall(ConsoleMenu::listFamiliesQtyHigher, scanner);
+                    safeCall(ConsoleMenu13::listFamiliesQtyHigher, scanner);
                     break;
                 case "4":
-                    safeCall(ConsoleMenu::listFamiliesQtyLower, scanner);
+                    safeCall(ConsoleMenu13::listFamiliesQtyLower, scanner);
                     break;
                 case "5":
-                    safeCall(ConsoleMenu::countFamiliesByMambers, scanner);
+                    safeCall(ConsoleMenu13::countFamiliesByMambers, scanner);
                     break;
                 case "6":
-                    safeCall(ConsoleMenu::createNewFamily, scanner);
+                    safeCall(ConsoleMenu13::createNewFamily, scanner);
                     break;
                 case "7":
-                    safeCall(ConsoleMenu::deleteFamily, scanner);
+                    safeCall(ConsoleMenu13::deleteFamily, scanner);
                     break;
                 case "8":
                     printSubMenuItems();
                     String userSelect = scanner.nextLine();
                     switch (userSelect) {
                         case "1":
-                            safeCall(ConsoleMenu::bornChild, scanner);
+                            safeCall(ConsoleMenu13::bornChild, scanner);
                             break;
                         case "2":
-                            safeCall(ConsoleMenu::addoptChild, scanner);
+                            safeCall(ConsoleMenu13::addoptChild, scanner);
                             break;
                         case "3":
                             break;
@@ -60,7 +65,7 @@ public class ConsoleMenu {
                     }
                     break;
                 case "9":
-                    safeCall(ConsoleMenu::deleteChild, scanner);
+                    safeCall(ConsoleMenu13::deleteChild, scanner);
                     break;
                 case "10":
                     stopProgram = true;
@@ -80,7 +85,7 @@ public class ConsoleMenu {
 
     private static void printMenuItems() {
         System.out.println("Введите команду");
-        System.out.println("1. Заполнить тестовыми данными");
+        System.out.println("1. Выгрузить семьи из базы данных");
         System.out.println("2. Отобразить весь список семей");
         System.out.println("3. Cписок семей, где количество людей больше");
         System.out.println("4. Cписок семей, где количество людей меньше");
@@ -115,24 +120,25 @@ public class ConsoleMenu {
     }
 
     private static void filedDB(Scanner scanner) {
-        Dog12 dog12 = new Dog12("Jeck", 5, 50, new HashSet<>(2));
+        Dog13 dog12 = new Dog13("Jeck", 5, 50, new HashSet<>(2));
         dog12.habits.add("run");
         dog12.habits.add("dance");
         try {
-            familyController12.createNewFamily(new Woman12("Olga", "GGGGG", "23/12/1999",50), new Man12("Bob", "GGGGG", "23/01/1999",80));
+            familyController12.createNewFamily(new Woman13("Olga", "GGGGG", "23/12/1999",50, new HashMap<String, String>(), dog12), new Man13("Bob", "GGGGG", "23/01/1999",80, new HashMap<String, String>(), dog12));
         } catch (ParseException e) {
             e.printStackTrace();
         }
         try {
-            familyController12.createNewFamily(new Woman12("Nana", "BBBBB", "23/10/1999",50), new Man12("Bil", "BBBBB","23/03/1999",80));
+            familyController12.createNewFamily(new Woman13("Nana", "BBBBB", "23/10/1999",50, new HashMap<String, String>(), dog12), new Man13("Bil", "BBBBB","23/03/1999",80, new HashMap<String, String>(), dog12));
         } catch (ParseException e) {
             e.printStackTrace();
         }
         try {
-            familyController12.createNewFamily(new Woman12("Bene", "CCCCC", "23/10/1999",50), new Man12("George", "CCCCC","23/03/1999",80));
+            familyController12.createNewFamily(new Woman13("Bene", "CCCCC", "23/10/1999",50, new HashMap<String, String>(), dog12), new Man13("George", "CCCCC","23/03/1999",80, new HashMap<String, String>(), dog12));
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
         System.out.println("Семьи созданны");
     }
 
@@ -176,9 +182,9 @@ public class ConsoleMenu {
         System.out.println("IQ матери");
         Integer motherIq = readTyped(scanner, Integer::parseInt, "Не число, попробуйте еще раз");
         String motherBirth = birthDay + "/" + birthMonth + "/" + birthYear;
-        Human12 mother = null;
+        Human13 mother = null;
         try {
-            mother = new Woman12(motherName, motherSurname, motherBirth, motherIq);
+            mother = new Woman13(motherName, motherSurname, motherBirth, motherIq);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -198,9 +204,9 @@ public class ConsoleMenu {
         System.out.println(" Мама: Имя" + motherName + "Фамилия " + motherSurname + "День " + birthDay + "Месяць " + birthMonth + "Год " + birthYear + "IQ " + motherIq + " " +
                 " Папа: Имя" + fatherName + "Фамилия " + fatherSurname + "День " + fatherBirthDay + "Месяць " + fatherBirthMonth + "Год " + fatherYear + "IQ " + fatherIq + " ");
         String fatherBirth = fatherBirthDay + "/" + fatherBirthMonth + "/" + fatherYear;
-        Human12 father = null;
+        Human13 father = null;
         try {
-            father = new Man12(fatherName, fatherSurname, fatherBirth, fatherIq);
+            father = new Man13(fatherName, fatherSurname, fatherBirth, fatherIq);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -249,9 +255,9 @@ public class ConsoleMenu {
         Integer childIq = readTyped(scanner, Integer::parseInt, "Не число, попробуйте еще раз");
         System.out.println("Усыновили/ Удочерили :" + familyId +" "+ childName +" "+ childSurname +" "+ childBirthDay +" "+ childBirthMonth +" "+ childYear +" "+ childIq);
         String birthDaySum = childBirthDay + "/" + childBirthMonth + "/" + childYear;
-        Human12 child = null;
+        Human13 child = null;
         try {
-            child = new Man12(childName, childSurname, birthDaySum, childIq);
+            child = new Man13(childName, childSurname, birthDaySum, childIq);
         } catch (ParseException e) {
             e.printStackTrace();
         }

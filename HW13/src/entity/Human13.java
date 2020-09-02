@@ -9,16 +9,16 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.HashMap;
 
-public class Human12 {
+public class Human13 {
     public String name;
     public String surname;
     public long birthDate;
     public int iq;
     public HashMap<String, String> schedule = new HashMap<String, String>();
-    public Family12 family;
-    public Pet12 pet12;
+    public Family13 family;
+    public Pet13 pet12;
 
-    public Human12(String name, String surname, String birth, int iq) throws ParseException {
+    public Human13(String name, String surname, String birth, int iq) throws ParseException {
         this.name = name;
         this.surname = surname;
         Date date = new SimpleDateFormat("dd/MM/yyyy").parse(birth);
@@ -26,12 +26,12 @@ public class Human12 {
         this.iq = iq;
     }
 
-    public Pet12 getPet12() { return pet12; }
-    public void setPet12(Pet12 pet12) { this.pet12 = pet12; }
-    public Family12 getFamily() {
+    public Pet13 getPet12() { return pet12; }
+    public void setPet12(Pet13 pet8) { this.pet12 = pet8; }
+    public Family13 getFamily() {
         return family;
     }
-    public void setFamily(Family12 family) {
+    public void setFamily(Family13 family) {
         this.family = family;
     }
 
@@ -63,7 +63,7 @@ public class Human12 {
     public HashMap<String,String> getSchedule() { return schedule; }
 
     public void setSchedule(HashMap<String,String> schedule) { this.schedule = schedule; }
-    public Human12(String name, String surname, String birth, int iq, HashMap<String,String> schedule, Pet12 pet12) throws ParseException {
+    public Human13(String name, String surname, String birth, int iq, HashMap<String,String> schedule, Pet13 pet12) throws ParseException {
         this.name = name;
         this.surname = surname;
         Date date = new SimpleDateFormat("dd/MM/yyyy").parse(birth);

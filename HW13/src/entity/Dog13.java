@@ -2,10 +2,10 @@ package entity;
 
 import java.util.Set;
 
-public class Dog9 extends Pet9 implements Foulable13 {
-    public Species13 species8 = Species13.DOG;
+public class Dog13 extends Pet13 implements Foulable13 {
+    public Species13 species13 = Species13.DOG;
 
-    public Dog9(String nickname, int age, int trickLevel, Set<String> habits) {
+    public Dog13(String nickname, int age, int trickLevel, Set<String> habits) {
         super(nickname, age, trickLevel, habits);
     }
     @Override
@@ -21,7 +21,7 @@ public class Dog9 extends Pet9 implements Foulable13 {
     @Override
     public String toString() {
         return "Dog8{" +
-                "species8=" + species8 +
+                "species8=" + species13 +
                 ", nickname='" + nickname + '\'' +
                 ", age=" + age +
                 ", trickLevel=" + trickLevel +

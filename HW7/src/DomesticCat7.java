@@ -1,8 +1,8 @@
-import entity.Foulable12;
+import entity.Foulable13;
 
 import java.util.Arrays;
 
-public class DomesticCat7 extends Pet7 implements Foulable12 {
+public class DomesticCat7 extends Pet7 implements Foulable13 {
     public Species7 species7 = Species7.DOMESTICCAT;
 
     public DomesticCat7(String nickname, int age, int trickLevel, String[] habits) {

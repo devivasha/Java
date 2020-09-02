@@ -1,5 +1,5 @@
-import entity.Family12;
-import entity.Pet12;
+import entity.Family13;
+import entity.Pet13;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,15 +16,15 @@ public class Human10 {
     public long birthDate;
     public int iq;
     public HashMap<String, String> schedule = new HashMap<String, String>();
-    public Family12 family;
-    public Pet12 pet8;
+    public Family13 family;
+    public Pet13 pet8;
 
-    public Pet12 getPet8() { return pet8; }
-    public void setPet8(Pet12 pet8) { this.pet8 = pet8; }
-    public Family12 getFamily() {
+    public Pet13 getPet8() { return pet8; }
+    public void setPet8(Pet13 pet8) { this.pet8 = pet8; }
+    public Family13 getFamily() {
         return family;
     }
-    public void setFamily(Family12 family) {
+    public void setFamily(Family13 family) {
         this.family = family;
     }
 
@@ -56,7 +56,7 @@ public class Human10 {
     public HashMap<String,String> getSchedule() { return schedule; }
 
     public void setSchedule(HashMap<String,String> schedule) { this.schedule = schedule; }
-    public Human10(String name, String surname, String birth, int iq, HashMap<String,String> schedule, Pet12 pet8) throws ParseException {
+    public Human10(String name, String surname, String birth, int iq, HashMap<String,String> schedule, Pet13 pet8) throws ParseException {
         this.name = name;
         this.surname = surname;
         Date date = new SimpleDateFormat("dd/MM/yyyy").parse(birth);

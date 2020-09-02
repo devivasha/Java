@@ -2,21 +2,21 @@ package entity;
 
 import java.util.Set;
 
-public class Unknown9 extends Pet9 {
-    public Species13 species8 = Species13.UNKNOWN;
+public class Fish13 extends Pet13 {
+    public Species13 species13 = Species13.FISH;
 
-    public Unknown9(String nickname, int age, int trickLevel, Set<String> habits) {
+    public Fish13(String nickname, int age, int trickLevel, Set<String> habits) {
         super(nickname, age, trickLevel, habits);
     }
-
     @Override
     public void respond() {
-        System.out.println("Привет, друг. Я неизвестный - "+ this.nickname +". Покорми меня");
+        System.out.println("Привет Я рыбка - "+ this.nickname +". Я люблю плавать ");
     }
+
     @Override
     public String toString() {
-        return "Unknown7{" +
-                "species7=" + species8 +
+        return "Fish8{" +
+                "species8=" + species13 +
                 ", nickname='" + nickname + '\'' +
                 ", age=" + age +
                 ", trickLevel=" + trickLevel +

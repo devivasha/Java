@@ -1,6 +1,5 @@
 package doa;
 import entity.Family11;
-import entity.Family12;
 
 import java.util.ArrayList;
 import java.util.List;

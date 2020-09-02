@@ -3,14 +3,14 @@ package entity;
 import java.util.*;
 
 
-public class Family12 {
-    public Human12 father;
-    public Human12 mother;
-    public List<Human12> children = new ArrayList<>();
-    public Set<Pet12> pet12 = new HashSet<>();
+public class Family13 {
+    public Human13 father;
+    public Human13 mother;
+    public List<Human13> children = new ArrayList<>();
+    public Set<Pet13> pet12 = new HashSet<>();
 
 
-    public Family12(Human12 father, Human12 mother) {
+    public Family13(Human13 father, Human13 mother) {
         this.father = father;
         this.mother = mother;
         this.mother.setFamily(this);
@@ -18,32 +18,32 @@ public class Family12 {
     }
 
 
-    public Human12 getFather() {
+    public Human13 getFather() {
         return father;
     }
 
-    public void setFather(Human12 father) {
+    public void setFather(Human13 father) {
         this.father = father;
     }
 
-    public Human12 getMother() {
+    public Human13 getMother() {
         return mother;
     }
 
-    public void setMother(Human12 mother) {
+    public void setMother(Human13 mother) {
         this.mother = mother;
     }
 
 
-    public List<Human12> getChildren() {
+    public List<Human13> getChildren() {
         return children;
     }
 
-    public void setChildren(List<Human12> children) {
+    public void setChildren(List<Human13> children) {
         this.children = children;
     }
 
-    public void addChild(Human12 child) {
+    public void addChild(Human13 child) {
        this.children.add(child);
        child.setFamily(this);
     }
@@ -52,7 +52,7 @@ public class Family12 {
         if (index < 0 ||index > this.children.size() -1 ){
             return;
         }
-        List<Human12> tempChildren = new ArrayList<>(this.children.size()-1);
+        List<Human13> tempChildren = new ArrayList<>(this.children.size()-1);
         for(int i = 0; i < children.size(); i++){
             if(i< index ) {
                 tempChildren.set(i, this.children.get(i));
@@ -66,11 +66,11 @@ public class Family12 {
         this.children.remove(child);
     }
 
-    public Set<Pet12> getPets() {
+    public Set<Pet13> getPets() {
         return pet12;
     }
 
-    public void addPet(Pet12 pet12) {
+    public void addPet(Pet13 pet12) {
         this.pet12.add(pet12);
         pet12.setFamily(this);
     }
@@ -98,7 +98,7 @@ public class Family12 {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Family13)) return false;
-        Family12 family12 = (Family12) o;
+        Family13 family12 = (Family13) o;
         return Objects.equals(father, family12.father) &&
                 Objects.equals(mother, family12.mother) &&
                 Objects.equals(children, family12.children) &&
@@ -143,8 +143,8 @@ public class Family12 {
             str.append('\t')
                     .append("children: ")
                     .append('\n');
-            for (Human12 child : this.children) {
-                String childType = child instanceof Man12 ? "boy: " : "girl: ";
+            for (Human13 child : this.children) {
+                String childType = child instanceof Man13 ? "boy: " : "girl: ";
                 str.append('\t')
                         .append('\t')
                         .append('\t')
@@ -155,7 +155,7 @@ public class Family12 {
         }
         str.append('\t')
                 .append("pets: [");
-        for (Pet12 pet12 : pet12 ) {
+        for (Pet13 pet12 : pet12 ) {
             str.append("{")
                     .append(pet12.prettyFormat())
                     .append("},");

@@ -1,15 +1,16 @@
 package entity;
 
+import java.text.ParseException;
 import java.util.HashMap;
 
-public final class Man9 extends Human9 {
+public final class Man13 extends Human13 {
 
-    public Man9(String name, String surname, int year, int iq, HashMap<String, String> schedule, Pet13 pet9) {
-        super(name, surname, year, iq, schedule, pet9);
+    public Man13(String name, String surname, String birth, int iq, HashMap<String, String> schedule, Pet13 pet12) throws ParseException {
+        super(name, surname, birth, iq, schedule, pet12);
     }
 
-    public Man9(String name, String surname, int year, int iq, Object o) {
-        super(name, surname, year, iq, o);
+    public Man13(String name, String surname, String birth, int iq)  throws ParseException  {
+        super(name, surname, birth, iq);
     }
 
     @Override
@@ -26,11 +27,16 @@ public final class Man9 extends Human9 {
         return "Man9{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", year=" + year +
+                ", year=" + birthDate +
                 ", iq=" + iq +
                 ", schedule=" + schedule +
                 ", family=" + family +
-                ", pet8=" + pet8 +
+                ", pet8=" + pet12 +
                 '}';
+    }
+
+    @Override
+    public String describeAge() {
+        return super.describeAge();
     }
 }

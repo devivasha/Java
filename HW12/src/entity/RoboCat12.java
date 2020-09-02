@@ -2,8 +2,8 @@ package entity;
 
 import java.util.Set;
 
-public class RoboCat12 extends Pet12 implements Foulable12 {
-    public Species12 species12 = Species12.ROBOCAT;
+public class RoboCat12 extends Pet13 implements Foulable13 {
+    public Species13 species12 = Species13.ROBOCAT;
 
     public RoboCat12(String nickname, int age, int trickLevel, Set<String> habits) {
         super(nickname, age, trickLevel, habits);

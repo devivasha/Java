@@ -3,7 +3,7 @@ package service;
 import doa.CollectionFamilyDao12;
 import doa.FamilyDoa12;
 import entity.*;
-import exception.FamilyOverflowException;
+import exception.FamilyOverflowException13;
 
 import java.text.ParseException;
 import java.util.List;
@@ -52,7 +52,7 @@ public class FamilyService12 {
     public boolean bornChild(Family12 family12, String fatherName, String motherName) throws ParseException {
 
         if (family12.countFamily() > 5) {
-            throw new FamilyOverflowException(family12.countFamily());
+            throw new FamilyOverflowException13(family12.countFamily());
         }
 
         if (family12.getMother() == null || family12.getFather() == null) {
@@ -76,7 +76,7 @@ public class FamilyService12 {
 
     public boolean adoptChild(Family12 family12, Human12 human12) {
         if (family12.countFamily() > 5) {
-            throw new FamilyOverflowException(family12.countFamily());
+            throw new FamilyOverflowException13(family12.countFamily());
         }
 
         boolean check = false;

@@ -1,11 +1,11 @@
-import entity.Foulable13;
+package entity;
 
-import java.util.Arrays;
+import java.util.Set;
 
-public class RoboCat7 extends Pet7 implements Foulable13 {
-    public Species7 species7 = Species7.ROBOCAT;
+public class RoboCat13 extends Pet13 implements Foulable13 {
+    public Species13 species13 = Species13.ROBOCAT;
 
-    public RoboCat7(String nickname, int age, int trickLevel, String[] habits) {
+    public RoboCat13(String nickname, int age, int trickLevel, Set<String> habits) {
         super(nickname, age, trickLevel, habits);
     }
 
@@ -20,12 +20,12 @@ public class RoboCat7 extends Pet7 implements Foulable13 {
 
     @Override
     public String toString() {
-        return "RoboCat7{" +
-                "species7=" + species7 +
+        return "RoboCat8{" +
+                "species7=" + species13 +
                 ", nickname='" + nickname + '\'' +
                 ", age=" + age +
                 ", trickLevel=" + trickLevel +
-                ", habits=" + Arrays.toString(habits) +
+                ", habits=" +habits +
                 '}';
     }
 }

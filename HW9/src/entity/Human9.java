@@ -9,13 +9,13 @@ public class Human9 {
     public int iq;
     public HashMap<String, String> schedule = new HashMap<String, String>();
     public Family9 family;
-    public Pet12 pet8;
+    public Pet13 pet8;
 
     public Human9(String name, String surname, int year, int iq, Object o) {
     }
 
-    public Pet12 getPet8() { return pet8; }
-    public void setPet8(Pet12 pet8) { this.pet8 = pet8; }
+    public Pet13 getPet8() { return pet8; }
+    public void setPet8(Pet13 pet8) { this.pet8 = pet8; }
     public Family9 getFamily() {
         return family;
     }
@@ -51,7 +51,7 @@ public class Human9 {
     public HashMap<String,String> getSchedule() { return schedule; }
 
     public void setSchedule(HashMap<String,String> schedule) { this.schedule = schedule; }
-    public Human9(String name, String surname, int year, int iq, HashMap<String,String> schedule, Pet12 pet8) {
+    public Human9(String name, String surname, int year, int iq, HashMap<String,String> schedule, Pet13 pet8) {
         this.name = name;
         this.surname = surname;
         this.year = year;

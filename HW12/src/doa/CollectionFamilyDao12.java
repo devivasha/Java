@@ -1,6 +1,7 @@
 package doa;
 import entity.Family12;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,12 +18,9 @@ public class CollectionFamilyDao12 implements FamilyDoa12 {
         return this.families.get(index);
 
     }
-
-
     @Override
     public boolean deleteFamily(Family12 family12) {
         return this.families.remove(family12);
-
     }
 
     @Override
